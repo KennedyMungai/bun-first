@@ -17,6 +17,10 @@ const server = Bun.serve({
 			return new Response('About Me!')
 		}
 
+		if (url.pathname === '/contacts') {
+			return new Response('Contact Me!')
+		}
+
 		return new Response('404! Not Found', { status: 404 })
 	}
 })
