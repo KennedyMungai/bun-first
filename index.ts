@@ -1,9 +1,10 @@
-const z = 10
-
-const read = (text: string) => {
-	return text
-}
-
-const msg = read('Cherry')
-
-console.log(msg)
+const server = Bun.serve({
+	port: 3000,
+	fetch: (request) => {
+		return new Response('Hello, World!', {
+			headers: {
+				'Content-Type': 'text/plain'
+			}
+		})
+	}
+})
