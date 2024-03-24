@@ -8,3 +8,5 @@ const server = Bun.serve({
 		})
 	}
 })
+
+console.log('Web Server Active')
