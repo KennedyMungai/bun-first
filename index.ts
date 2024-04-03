@@ -10,13 +10,12 @@ const server = Bun.serve({
 			return new Response(body)
 		}
 
-		if (url.pathname === '/about') {
-			return new Response('About Me!')
-		}
+		if (url.pathname === '/about') return new Response('About Me!')
 
-		if (url.pathname === '/contact') {
-			return new Response('Contact Info')
-		}
+		if (url.pathname === '/contact') return new Response('Contact Info')
+
+		// Handle Error
+		if (url.pathname === '/feed') throw new Error('Could not fetch feed')
 
 		return new Response('404!')
 	}
