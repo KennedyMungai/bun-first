@@ -1,12 +1,11 @@
+import figlet from 'figlet'
+
 const server = Bun.serve({
 	port: 3000,
-	fetch: (request) => {
-		return new Response('Hello, World!', {
-			headers: {
-				'Content-Type': 'text/plain'
-			}
-		})
+	fetch: (req) => {
+		const body = figlet.textSync('Hello World!')
+		return new Response('Hello World')
 	}
 })
 
-console.log('Web Server Active')
+console.log(`Serving on http://localhost:${server.port}`)
