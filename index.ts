@@ -4,7 +4,7 @@ const server = Bun.serve({
 	port: 3000,
 	fetch: (req) => {
 		const body = figlet.textSync('Hello World!')
-		return new Response('Hello World')
+		return new Response(body)
 	}
 })
 
